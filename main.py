@@ -182,8 +182,8 @@ def show_post(post_id):
         )
         db.session.add(comment)
         db.session.commit()
-        return redirect(url_for('show_post', post_id=requested_post.id))
-    return render_template("post.html", post=requested_post, logged_in=current_user.is_authenticated, form=form)
+
+    return render_template("post.html", post=requested_post, logged_in=current_user.is_authenticated, form=form, current_user=current_user)
 
 
 @app.route("/about")
